@@ -1,4 +1,4 @@
-import StockData from "./stockData.mjs";
+import StockData from "./StockData.mjs";
 import StockList from "./StockList.mjs";
 
 const dataSource = new StockData("AAPL");

@@ -1,7 +1,7 @@
 import { getParam } from "./utilsStock.mjs";
 import { setLocalStorage } from "./utils.mjs";
 import StockData from "./StockData.mjs";
-import StockDetails from './StockDetails.mjs';
+import StockDetails from "./StockDetails.mjs";
 
 const dataSource = new StockData("stock");
 const symbol = getParam("symbol");
