@@ -39,8 +39,8 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
 
-export function renderWithTemplate(templateFn, parentElement, data, position ="afterbegin", callback){
-  parentElement.insertAdjacentHTML(position, templateFn);
+export function renderWithTemplate(templateFn, parent, data, position ="afterbegin", callback){
+  parent.insertAdjacentHTML(position, templateFn);
   if(callback){
     callback(data);
   }
@@ -56,14 +56,14 @@ export async function loadTemplate(path){
 // function to dynamically load the header and footer into a page
 export async function loadHeaderFooter() {
   // Load the header and footer templates in from our partials (loadTemplate).
-  const headerTemplate = await loadTemplate("../partials/header.html");
-  const footerTemplate = await loadTemplate("../partials/footer.html");
+  const headerTemplate = await loadTemplate("../partials/headerStock.html");
+  const footerTemplate = await loadTemplate("../partials/footerStock.html");
 
   // Grab the header and footer elements out of the DOM.
-  const headerElement = document.querySelector("#main-hearder");
+  const headerElement = document.querySelector("#main-header");
   const footerElement = document.querySelector("#main-footer");
 
   // Render the header and footer (renderWithTemplate).
-  renderListWithTemplate(headerTemplate,headerElement);
-  renderListWithTemplate(footerTemplate,footerElement);
+  renderWithTemplate(headerTemplate, headerElement);
+  renderWithTemplate(footerTemplate, footerElement);
 }

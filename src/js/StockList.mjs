@@ -21,11 +21,14 @@ export default class StockListing {
     async init() {
       // our dataSource will return a Promise...so we can use await to resolve it.
       const list = await this.dataSource.getData();
+      console.log(44444);
       // render the list - to be completed
+      this.renderList(list);
     }
 
-    renderList(){
-        l
-    }
+    // render 
+    renderList(list) {
+      renderListWithTemplate(stockCardTemplate, this.listElement, list);
+  }
     
   }
