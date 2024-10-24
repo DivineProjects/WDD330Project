@@ -1,5 +1,8 @@
+import { loadHeaderFooter } from "./utils.mjs";
 import StockData from "./StockData.mjs";
 import StockList from "./StockList.mjs";
+
+loadHeaderFooter();
 
 const dataSource = new StockData("AAPL");
 const element = document.querySelector(".product-list");

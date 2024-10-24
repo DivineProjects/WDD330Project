@@ -1,7 +1,9 @@
-import { getParam } from "./utilsStock.mjs";
+import { getParam, loadHeaderFooter } from "./utilsStock.mjs";
 import { setLocalStorage } from "./utils.mjs";
 import StockData from "./StockData.mjs";
 import StockDetails from "./StockDetails.mjs";
+
+loadHeaderFooter();
 
 const dataSource = new StockData("stock");
 const symbol = getParam("symbol");
