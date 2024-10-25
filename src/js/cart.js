@@ -1,30 +1,33 @@
-import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
+import ShoppingCart from "./ShoppingCart.mjs";
+import { updateCartItem } from "./ShoppingCart.mjs";
 
 loadHeaderFooter();
 
-function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
-}
+const cart = new ShoppingCart("so-cart", ".product-list");
+cart.renderCartContents();
+// event listener to remove item from cart
+cart.removeItemListener();
 
-function cartItemTemplate(item) {
-  const newItem = `<li class="cart-card divider">
-  <a href="#" class="cart-card__image">
-    <img
-      src="${item.Image}"
-      alt="${item.Name}"
-    />
-  </a>
-  <a href="#">
-    <h2 class="card__name">${item.Name}</h2>
-  </a>
-  <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-  <p class="cart-card__quantity">qty: 1</p>
-  <p class="cart-card__price">$${item.FinalPrice}</p>
-</li>`;
+// event listener to go to checkout page
+document.querySelector(".checkout-button").addEventListener("click", () => {
+  window.location.href = "/checkout/index.html";
+});
 
-  return newItem;
-}
+// Event listener for Updating Product Quantity
+// Leads to update the quantity in the cart
+// It is saved it to local storage:
+document.querySelectorAll(".qty").forEach((input) => {
+  input.addEventListener("change", function (event) {
+    const newQuantity = parseInt(event.target.value);
+    const itemId = event.target.getAttribute("data-id");
 
-renderCartContents();
+    if (newQuantity < 1 || newQuantity > 100) {
+      alert("Quantity must be between 1 and 100");
+      return;
+    }
+    // Update the cart with the new quantity
+    updateCartItem("so-cart", itemId, newQuantity);
+  });
+});
+

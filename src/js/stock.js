@@ -1,17 +1,21 @@
 import { getParam, loadHeaderFooter } from "./utilsStock.mjs";
 import { setLocalStorage } from "./utils.mjs";
-import StockData from "./StockData.mjs";
+import SearchCompanyProfile from "./StockData.mjs";
+// import {StockData, SearchCompanyProfile}from "./StockData.mjs";
 import StockDetails from "./StockDetails.mjs";
 
 loadHeaderFooter();
 
-const dataSource = new StockData("stock");
-const symbol = getParam("symbol");
-// console.log(symbol);
-// console.log(dataSource.findStockBySymbol(symbol));
+// const dataSource = new StockData("stock");
+// const symbol = getParam("symbol");
+// // console.log(symbol);
+// // console.log(dataSource.findStockBySymbol(symbol));
 
-const stock = new StockDetails(symbol, dataSource);
-stock.init();
+// const stock = new StockDetails(symbol, dataSource);
+// stock.init();
+
+const ticker = new SearchCompanyProfile("AAAL");
+ticker.getData();
 
 // function addToCart(product) {
 //   setLocalStorage("so-cart", product);
