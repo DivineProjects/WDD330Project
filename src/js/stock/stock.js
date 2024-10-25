@@ -1,6 +1,8 @@
-// import { getParam, loadHeaderFooter } from "./utilsStock.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
 
-// loadHeaderFooter();
+loadHeaderFooter();
+
+
 // document.getElementById('search-button').addEventListener('click', async () => {
 //     const query = document.getElementById('search-input').value;
 //     const apiKey = 'GwNt7m8crW2zslDR2dfLoppujRi22PWa'; // Replace with your actual API key

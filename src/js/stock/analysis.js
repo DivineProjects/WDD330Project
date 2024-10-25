@@ -1,3 +1,7 @@
+import { loadHeaderFooter } from "./utils.mjs";
+
+loadHeaderFooter();
+
 // Get the stock symbol from the URL query parameters
 const urlParams = new URLSearchParams(window.location.search);
 const symbol = urlParams.get('symbol');

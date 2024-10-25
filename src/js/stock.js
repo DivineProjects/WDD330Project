@@ -1,32 +1,48 @@
-import { getParam, loadHeaderFooter } from "./utilsStock.mjs";
-import { setLocalStorage } from "./utils.mjs";
-import SearchCompanyProfile from "./StockData.mjs";
-// import {StockData, SearchCompanyProfile}from "./StockData.mjs";
-import StockDetails from "./StockDetails.mjs";
+import { loadHeaderFooter } from "./utilsStock.mjs";
 
 loadHeaderFooter();
 
-// const dataSource = new StockData("stock");
-// const symbol = getParam("symbol");
-// // console.log(symbol);
-// // console.log(dataSource.findStockBySymbol(symbol));
 
-// const stock = new StockDetails(symbol, dataSource);
-// stock.init();
+// document.getElementById('search-button').addEventListener('click', async () => {
+//     const query = document.getElementById('search-input').value;
+//     const apiKey = 'GwNt7m8crW2zslDR2dfLoppujRi22PWa'; // Replace with your actual API key
 
-const ticker = new SearchCompanyProfile("AAAL");
-ticker.getData();
+//     if (query) {
+//         try {
+//             const response = await fetch(`https://financialmodelingprep.com/api/v3/search?query=${query}&apikey=${apiKey}`);
+//             const data = await response.json();
+//             displayResults(data);
+//         } catch (error) {
+//             console.error('Error fetching data:', error);
+//             alert('Error fetching data. Please try again later.');
+//         }
+//     } else {
+//         alert('Please enter a stock symbol to search.');
+//     }
+// });
 
-// function addToCart(product) {
-//   setLocalStorage("so-cart", product);
+// function displayResults(results) {
+//     const resultsContainer = document.querySelector('.search-results');
+//     resultsContainer.innerHTML = ''; // Clear previous results
+
+//     if (results.length === 0) {
+//         resultsContainer.innerHTML = '<p>No results found.</p>';
+//         return;
+//     }
+
+//     results.forEach(item => {
+//         const card = document.createElement('div');
+//         card.className = 'result-card';
+
+//         // Make the entire card clickable by wrapping it in an <a> tag
+//         card.innerHTML = `
+//             <a href="details.html?symbol=${item.symbol}" class="card-link">
+//                 <h3>${item.name} (${item.symbol})</h3>
+//                 <p>Exchange: ${item.stockExchange} (${item.exchangeShortName})</p>
+//                 <p>Currency: ${item.currency}</p>
+//             </a>
+//         `;
+//         resultsContainer.appendChild(card);
+//     });
 // }
-// // add to cart button event handler
-// async function addToCartHandler(e) {
-//   const product = await dataSource.findStockBySymbol(e.target.dataset.id);
-//   addToCart(product);
-// }
 
-// // add listener to Add to Cart button
-// document
-//   .getElementById("addToCart")
-//   .addEventListener("click", addToCartHandler);
