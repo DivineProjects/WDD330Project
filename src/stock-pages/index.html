@@ -13,8 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styleStock.css">
     <link rel="stylesheet" href="../css/search.css" >
+    <link rel="stylesheet" href="../css/styleStock.css">
 
     <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">
     <script src="../js/stock/stock.js" type="module"></script>
@@ -24,22 +24,22 @@
   <body>
     <header class="divider" id="main-header">
     </header>
-
-    <main class="divider">
-      <div class="container">
-        <div class="search-header">
-            <h1>Search Company Profile </h1>
+    <div class="main-container">
+      <main class="divider">
+        <div class=".search-main">
+          <div class="search-header">
+              <h1>Search Company Profile </h1>
+          </div>
+          <div class="search-container">
+              <input type="text" id="search-input" placeholder="Search for stocks (e.g., AAPL)" />
+              <button id="search-button">Search</button>
+          </div>
+          <div class="search-results">
+              <!-- Dynamic search results will be inserted here -->
+          </div>
         </div>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search for stocks (e.g., AAPL)" />
-            <button id="search-button">Search</button>
-        </div>
-        <div class="search-results">
-            <!-- Dynamic search results will be inserted here -->
-        </div>
+      </main>
     </div>
-    </main>
-
     <footer id="main-footer"> </footer>
 
   </body>

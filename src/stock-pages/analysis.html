@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/analysis.css">
 
     <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">
-    <script src="../js/stock/analysis.js" type="module"></script>
+    <!-- <script src="../js/stock/analysis.js" type="module"></script> -->
     <style>
         table {
             width: 80%; /* Set the width of the table */
@@ -42,12 +42,77 @@
         .responsive-table {
     width: 100%;
     border-collapse: collapse;
+
 }
 
 .responsive-table th, .responsive-table td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
+}
+
+/* kkkkkkkkkkkkk */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.financial-data {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+
+th {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+td:nth-child(even) {
+    background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -78,11 +143,10 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="divider" id="main-header">
+        
     </header>
-    <div class="search-header">
-        <h1>Company Profile </h1>
-    </div>
+
     <main class="financial-data">
         <!-- Financial data will be dynamically inserted here -->
     </main>
@@ -90,5 +154,7 @@
         <!-- TTM data will be dynamically inserted here -->
     </div>
     <!-- <script src="../js/stock/analysis.js"></script> -->
+    <footer id="main-footer"> </footer>
+    
 </body>
 </html>
