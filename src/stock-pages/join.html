@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 330 - Web Frontend Development 11 course stock Overview Application for Divine Jigu">
+    <meta name="author" content="Divine Jigu">
+    <title>Stock Overview</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/search.css" >
+    <link rel="stylesheet" href="../css/styleStock.css">
+
+    <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">
+    <script src="../js/stock/join.js" type="module"></script>
+    <style>/* JOIN */
+        .pwderror {
+            display: none;
+            font-size: 0.8rem;
+            padding: 0.5rem;
+            /*-this allows the at least 44px to the touch*/
+            color: white;
+            width: 100%;
+            /* full width on small screens*/
+            max-width: 20rem;
+            /* for large screens*/
+            background-color: #9c2c13;
+            margin-bottom: 0;
+            margin-top: 0.5rex;
+        }
+       /* css for JOIN PAGE  */
+
+/*----------- FORM --------------*/
+.form-container {
+    margin: 0 auto;
+}
+
+form fieldset {
+    margin: 2rem 0;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 0.5rem 2%;
+}
+
+form legend {
+    color: var(--text-color);
+    margin: 0 1rem;
+    padding: 0.5rem 2%;
+    text-align: center;
+}
+
+form label.top,
+form div {
+    display: block;
+    padding-top: 1rem;
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
+form label.top input,
+form label.top select,
+form label.top textarea {
+    -webkit-appearance: none;
+    display: block;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 0.75rem;
+    /*-this allows the at least 44px to the touch*/
+    color: var(--text-color);
+    width: 100%;
+    /* full width on small screens*/
+    max-width: 20rem;
+    /* for large screens*/
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+/* show left border red if input is empty / invalid*/
+form label.top input:required {
+    border-left: 6px solid red;
+}
+
+/* changes border to green if input is valid*/
+form label.top input:required:valid {
+    border-left: 6px solid green;
+}
+
+form label.sbs {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--text-color);
+}
+
+form input.submitBtn {
+    border: none;
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--text-color);
+    border-radius: 1rem;
+    padding: 0.75rem 1.5rem;
+    margin: 0 5rem 2rem 2%;
+    width: 96%;
+    max-width: 20rem;
+    cursor: pointer;
+}
+
+/* start thank you modification*/
+.thankyou {
+    grid-column: 1/3;
+    width: 100%;
+    text-align: center;
+}
+        </style>
+
+  </head>
+
+  <body>
+    <header class="divider" id="main-header">
+    </header>
+    <div class="main-container">
+      <main class="divider">
+        <div class="form-container">
+            <form action="thankyou.html" method="get">
+                <fieldset>
+                    <legend class="top">Joining Information</legend>
+                    <label class="top">First Name*<input type="text" name="fname" required id="fname"></label>
+                    <label class="top">Last Name*<input type="text" name="lname" required id="lname"></label>
+                    <label class="top">Title / Position <input type="text" id="position" name="position"
+                            pattern="[A-Za-z -]{7,}"
+                            title="Please enter at least seven characters containing only letters, hyphens, and spaces">
+                    </label>
+                    <label class="top">Email*<input type="email" name="email" placeholder="someone@gmail.com" required
+                            id="email">
+                    </label>
+                    <label class="top">Phone*<input type="tel" name="phone" placeholder="0700000000" required
+                            id="phone">
+                    </label>
+                    <label class="top">Organization's Name*<input type="text" name="organ" required id="organ"
+                            pattern="[a-zA-Z -]{7,}"
+                            title="Please enter at least 7 characters containing only letters, hyphens, and spaces">
+                    </label>
+
+                    <label class="pwderror"></label>
+
+                    <label class="top">
+                        <span>Organisation</span>
+                        <textarea id="org-disc" name="org-disc" rows="10" cols="50"></textarea>
+                    </label>
+                    <input type="hidden" id="currentDateTime" name="currentDateTime">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Membership</legend>
+                    <div>Membership Level</div>
+                    <label class="sbs"><input type="radio" name="membership" value="np">Non Profit Membership</label>
+                    <label class="sbs"><input type="radio" name="membership" value="bronze">Bronze Membership</label>
+                    <label class="sbs"><input type="radio" name="membership" value="silver">Silver Membership</label>
+                    <label class="sbs"><input type="radio" name="membership" value="gold">Gold Membership</label>
+                </fieldset>
+                <label class="sbs"><input type="hidden" id="timestamp" name="timestamp" value=""></label>
+                <input type="submit" value="Join" class="submitBtn">
+            </form>
+        </div>
+
+      </main>
+    </div>
+    <footer id="main-footer"> </footer>
+
+  </body>
+</html>
