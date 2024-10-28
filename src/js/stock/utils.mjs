@@ -31,13 +31,13 @@ export function getParam(param){
 
 }
 
-export function renderListWithTemplate(templateFn, parentElement, list, position= "afterbegin", clear = false){
-  const htmlStrings = list.map(templateFn);
-  if (clear){
-    parentElement.innerHTML = "";
-  }
-  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
-}
+// export function renderListWithTemplate(templateFn, parentElement, list, position= "afterbegin", clear = false){
+//   const htmlStrings = list.map(templateFn);
+//   if (clear){
+//     parentElement.innerHTML = "";
+//   }
+//   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+// }
 
 export function renderWithTemplate(templateFn, parent, data, position ="afterbegin", callback){
   parent.insertAdjacentHTML(position, templateFn);
@@ -66,4 +66,32 @@ export async function loadHeaderFooter() {
   // Render the header and footer (renderWithTemplate).
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
+}
+
+
+// handling the unhappy path (form validation)
+export function alertMessage(message, scroll=true) {
+  const alert = document.createElement("div");
+  alert.classList.add("alert");
+  // set the contents of the alert
+  alert.innerHTML = `<p>${message}</p>
+    <button class="close-alert">X</button>`;
+  alert.style.display = "block";
+
+  // add the alert to the page
+  // document.body.appendChild(alert);
+
+  // add an event listener to the close button
+  alert.querySelector(".close-alert").addEventListener("click", () => {
+    alert.remove();
+  });
+
+  // add the alert to the page
+  const main = document.querySelector("main");
+  main.prepend(alert);
+
+  // scroll to the top of the page
+  if (scroll) {
+    window.scrollTo(0, 0);
+  }
 }
