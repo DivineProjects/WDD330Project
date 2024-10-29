@@ -75,7 +75,7 @@ export class FetchData {
             cart.push(this.stock);
             // update local storage with complete cart
             setLocalStorage("watch-list", cart);
-            updateWatchListIcon(cart);
+            // updateWatchListIcon(cart);
             cartAnimate();
             // put an alert message when the product is added to the cart
             alertMessage(`${this.stock.symbol} has been added to Watch List`, true); 
