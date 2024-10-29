@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, alertMessage } from "./utils.mjs";
 
 /**
  * Update the watchList icon with the current number of items in the watchList.
@@ -23,36 +23,54 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 //     return newItem;
 // }
 
+// function cartItemTemplate(item) {
+//     const newItem = `
+// <li class="cart-card divider">
+//         <div class="cart-card__image">
+//             <a href="#">
+//                 <img src="${item.image}" alt="${item.symbol}"/>
+//             </a>
+//         </div>
+//         <div class="cart-card__details">
+//             <a href="#">
+//                 <h2 class="card__name">${item.symbol}</h2>
+//             </a>
+//             <p class="cart-card__color">Change: ${item.changes}</p>
+//             <p class="cart-card__last-div">Last Divident: ${item.lastDiv}</p>
+//         </div>
+//         <div class="cart-card__actions">
+//             <p class="cart-card__price">Price: $${item.price}</p>
+//             <a href="details.html?symbol=${item.symbol}" class="card-link">View Profile</a>
+//             <span class="cart-card__remove-data" id="AAPL.NE">Remove</span>
+//         </div>
+//     </li>`
+//       return newItem;
+// }
+
 function cartItemTemplate(item) {
-    const newItem = `
-<li class="cart-card divider">
-        <div class="cart-card__image">
-            <a href="#">
-                <img src="${item.image}" alt="${item.symbol}"/>
-            </a>
+    const newItem = `<div class="stock-card">
+        <img src="${item.image}" alt="${item.symbol}" class="stock-image"/>
+        <div class="stock-details">
+            <p class="stock-name">${item.symbol }</p>
+            <div class="price-dividend">
+                <p class="stock-price">Price: $${item.price}</p>
+                <p class="stock-dividend">Change: ${item.changes}</p>
+            </div>
+            <div class="actions">
+                <a href="../stock/details.html?symbol=${item.symbol}" class="view-link">View</a>
+                <a href="#" class="delete-link" id="${item.symbol}">Delete</a>
+            </div>
         </div>
-        <div class="cart-card__details">
-            <a href="#">
-                <h2 class="card__name">${item.symbol}</h2>
-            </a>
-            <p class="cart-card__color">Change: ${item.changes}</p>
-            <p class="cart-card__last-div">Last Divident: ${item.lastDiv}</p>
-        </div>
-        <div class="cart-card__actions">
-            <p class="cart-card__price">Price: $${item.price}</p>
-            <a href="details.html?symbol=${item.symbol}" class="card-link">View Profile</a>
-            <span class="cart-card__remove-data" id="AAPL.NE">Remove</span>
-        </div>
-    </li>`
+    </div>`
       return newItem;
 }
 
   export function removeItemListener() {
-    const cartContainer = document.querySelector("#cart-list");
+    const cartContainer = document.querySelector("#watch-list");
     
     // event listener to remove item from cart
     cartContainer.addEventListener("click", (e) => {
-      if (e.target.classList.contains("cart-card__remove-data")) {
+      if (e.target.classList.contains("delete-link")) {
         const itemId = e.target.id;
         removeItem(itemId);
       }
@@ -67,7 +85,9 @@ function cartItemTemplate(item) {
     // update local storage
     setLocalStorage("watch-list", cartItems);
     // re-render the cart
-    displayCartItems();
+    displayWatchList();
+    alertMessage(`Stock Removed added to Watch List`, true); 
+
     // displayResults(cartItems)
     
   }
@@ -91,19 +111,18 @@ export function updateWatchListIcon(watchList) {
 }
 
 
-
-// Function to display cart items
-export function displayCartItems() {
+// Function to display watchlist
+export function displayWatchList() {
     const cart = getLocalStorage("watch-list");
 
     displayResults(cart);
 }
-// Call this function to display the cart items when the page loads
 
+// displays the watchlist items when the page loads
 function displayResults() {
-    const results = getLocalStorage("watch-list"); // Retrieve cart items from local storage
-
-    const resultsContainer = document.querySelector('#cart-list');
+    const results = getLocalStorage("watch-list"); 
+   
+    const resultsContainer = document.querySelector('#watch-list');
     resultsContainer.innerHTML = ''; // Clear previous results
 
     if (results.length === 0) {

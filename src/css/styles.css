@@ -543,7 +543,7 @@ td:nth-child(even) {
 /* CSS for alert Message */
 .alert {
   position: fixed; 
-  top: 20px; 
+  top: 15%; 
   left: 50%; 
   transform: translateX(-50%);
   background-color: #f44336; 
@@ -614,9 +614,70 @@ footer img:hover{
 }
 
 
+/* CSS for WAtchList */
 
+#watch-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Centers the cards and adds space */
+  margin: 20px;
 
+}
+.stock-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 15rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 10px;
+  color: black;
+  margin: 10px; /* Space between cards */
+}
 
+.stock-image {
+  width: 100%;
+  height: 50%;
+  /* object-fit: cover; */
+}
+.stock-details {
+  padding: 16px;
+}
+
+.stock-name {
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+}
+
+.price-dividend {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.stock-price,
+.stock-dividend {
+  margin: 0; /* Reset margin for uniformity */
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.view-link,
+.delete-link {
+  text-decoration: none;
+  color: #007BFF;
+  margin-right: 10px;
+}
+
+.view-link:hover,
+.delete-link:hover {
+  text-decoration: underline;
+}
+
+/* End of CSS for WatchLit */
 
 
 

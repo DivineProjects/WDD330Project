@@ -1,6 +1,6 @@
 import { getLocalStorage, setLocalStorage, alertMessage } from "./utils.mjs";
 import {fetchStock} from "./externalServices.mjs";
-import{updateWatchListIcon} from "./watchList.mjs";
+import{updateWatchListIcon} from "./watchListData.mjs";
 
 function companyProfileTemplate(data) {
     const profileContainer = document.querySelector('.company-profile');
