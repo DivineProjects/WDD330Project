@@ -3,29 +3,29 @@
   --font-headline: "Arial Narrow Bold", sans-serif;
   /* colors */
 
-  --deep-blue: #003366;          /* Primary color - trust and reliability */
-  --gold: #FFD700;               /* Accent color - luxury and wealth */
-  --white: #FFFFFF;              /* Background and text contrast */
-  
+  --deep-blue: #003366; /* Primary color - trust and reliability */
+  --gold: #ffd700; /* Accent color - luxury and wealth */
+  --white: #ffffff; /* Background and text contrast */
+
   /* Background Colors */
-  --bg-color: var(--deep-blue);  /* Overall background color */
+  --bg-color: var(--deep-blue); /* Overall background color */
   --bg-header-color: var(--deep-blue); /* Header background color */
-  
+
   /* Text Colors */
-  --text-color: var(--white);     /* Primary text color */
+  --text-color: var(--white); /* Primary text color */
   --primary-text-color: var(--gold); /* Color for headings */
   --secondary-text-color: var(--white); /* Color for secondary text */
   --tertiary-text-color: var(--gold); /* Color for links and accents */
-  
+
   /* Accent Colors */
-  --accent-one: #B87333;             /* Copper - warm accent */
-  --accent-two: #708090;         /* Slate Gray - cool accent */
+  --accent-one: #b87333; /* Copper - warm accent */
+  --accent-two: #708090; /* Slate Gray - cool accent */
   --accent-three: #333;
 
   /* Button Colors */
-  --btn-color: var(--gold);       /* Button background color */
-  --hover-color: var(--white);     /* Button hover color */
-  --link-color: var(--gold);       /* Link color */
+  --btn-color: var(--gold); /* Button background color */
+  --hover-color: var(--white); /* Button hover color */
+  --link-color: var(--gold); /* Link color */
 
   /* font sizes */
   --font-size-base: 1rem;
@@ -52,7 +52,7 @@ body {
   background-color: var(--bg-color);
 }
 /* general */
-.main-container{
+.main-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Full viewport height */
@@ -64,7 +64,9 @@ main {
 img {
   max-width: 100%;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--text-color);
 }
 
@@ -134,7 +136,6 @@ header {
   color: var(--accent-one);
 }
 
-
 /* navigation list */
 .navlist {
   display: flex;
@@ -153,13 +154,13 @@ header {
   transform: scale(1.1);
   color: var(--accent-one);
 }
-.auth-links{
+.auth-links {
   display: flex;
   align-items: center;
 }
 
 /* sign in sign out */
-.auth-links a{
+.auth-links a {
   display: inline-block;
   padding: 9px 16px;
   background: transparent;
@@ -171,12 +172,12 @@ header {
   border-radius: 7px;
   transition: all 0.6s ease;
 }
-#signup{
+#signup {
   font-size: var(--font-size-base);
   background: var(--gold);
   color: var(--deep-blue);
 }
-.auth-links a:hover{
+.auth-links a:hover {
   transform: translateY(-5px);
   border: 2px solid var(--accent-one);
 }
@@ -199,11 +200,21 @@ header {
 
 /* Keyframe animation for item added */
 @keyframes shake {
-  0% { transform: scale(1); }
-  25% { transform: scale(1.3); }
-  50% { transform: scale(1); }
-  75% { transform: scale(1.5); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .cart a.active svg {
@@ -232,7 +243,7 @@ header {
 }
 
 /* Hero section */
-section{
+section {
   padding: 0 14%;
 }
 .hero {
@@ -247,25 +258,25 @@ section{
   align-items: center;
   gap: 2rem;
 }
-.hero-img img{
+.hero-img img {
   width: 100%;
   height: auto;
 }
-.hero-text h1{
+.hero-text h1 {
   font-size: var(--font-size-x-large);
   font-weight: 900;
   margin: 15px 0;
 }
-.hero-text h1 span{
+.hero-text h1 span {
   color: var(--accent-one);
 }
-.hero-text h5{
+.hero-text h5 {
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 1px;
   color: var(--accent-three);
 }
-.hero-text p{
+.hero-text p {
   width: 100%;
   max-width: 600px;
   font-size: var(--font-size-base);
@@ -274,11 +285,11 @@ section{
   color: var(--accent-three);
   margin-bottom: 40px;
 }
-.main-hero{
+.main-hero {
   display: flex;
   align-items: center;
 }
-.hero-search-btn{
+.hero-search-btn {
   display: inline-block;
   padding: 13px 32px;
   background-color: var(--bg-color);
@@ -291,10 +302,10 @@ section{
   margin-right: 20px;
   text-decoration: none;
 }
-.hero-search-btn:hover{
+.hero-search-btn:hover {
   transform: scale(1.1);
 }
-.hero-learn-btn{
+.hero-learn-btn {
   display: flex;
   align-items: center;
   font-size: 17px;
@@ -302,7 +313,7 @@ section{
   color: var(--text-color);
   text-decoration: none;
 }
-.hero-learn-btn span{
+.hero-learn-btn span {
   font-size: 28px;
   font-weight: bold;
   color: var(--secondary-color);
@@ -311,7 +322,7 @@ section{
 }
 
 /* css for search page */
-.divider{
+.divider {
   width: 100%;
   padding: 20px;
 }
@@ -322,11 +333,11 @@ section{
 }
 .search-header {
   margin: 10px 10%;
-  text-align:left;
+  text-align: left;
 }
 .search-container {
   display: flex;
-  justify-content:left;
+  justify-content: left;
   align-items: center;
   margin-bottom: 20px;
   margin: 0 8%;
@@ -378,14 +389,14 @@ section{
   transform: scale(1.05);
 }
 .card-link {
-  text-decoration: none; 
+  text-decoration: none;
   color: inherit; /* Use inherited text color */
 }
 /* end of css for search page */
 
 /* CSS Details page */
- 
-.company-profile{
+
+.company-profile {
   color: var(--accent-three);
   /* color: darkgray; */
 }
@@ -393,7 +404,7 @@ section{
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: var(--white) ;
+  background-color: var(--white);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -437,14 +448,13 @@ h2 {
   text-align: left;
 }
 
-
 h4 {
   font-size: 22px;
   /* color: #444; */
   margin-bottom: 10px;
 }
 
-.btn-addToWAtch{
+.btn-addToWAtch {
   display: inline-block;
   margin-top: 5px;
   padding: 5px 10px;
@@ -452,7 +462,9 @@ h4 {
   color: var(--deep-blue);
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
   cursor: pointer;
 }
 
@@ -464,7 +476,9 @@ h4 {
   color: var(--accent-three);
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
 }
 
 .investigate-link:hover {
@@ -480,7 +494,7 @@ h4 {
 }
 
 .cart:hover svg {
-fill: #007BFF; /* Change color on hover */
+  fill: #007bff; /* Change color on hover */
 }
 
 /* End of CSS DEtails Page */
@@ -489,15 +503,14 @@ fill: #007BFF; /* Change color on hover */
 .responsive-table {
   width: 100%;
   border-collapse: collapse;
-
 }
 
-.responsive-table th, .responsive-table td {
+.responsive-table th,
+.responsive-table td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ddd;
-} 
-
+}
 
 .financial-data {
   max-width: 1200px;
@@ -514,7 +527,8 @@ table {
   margin-top: 20px;
 }
 
-th, td {
+th,
+td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -542,44 +556,44 @@ td:nth-child(even) {
 
 /* CSS for alert Message */
 .alert {
-  position: fixed; 
-  top: 15%; 
-  left: 50%; 
+  position: fixed;
+  top: 15%;
+  left: 50%;
   transform: translateX(-50%);
-  background-color: #f44336; 
-  color: white; 
-  padding: 15px 20px; 
-  border-radius: 5px; 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
-  z-index: 1000; 
-  animation: fadeIn 0.3s; 
+  background-color: #f44336;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeIn 0.3s;
 }
 
 .alert p {
-  margin: 0; 
-  display: inline; 
+  margin: 0;
+  display: inline;
 }
 
 .close-alert {
   background: none;
-  border: none; 
-  color: white; 
+  border: none;
+  color: white;
   font-weight: bold;
-  cursor: pointer; 
-  margin-left: 15px; 
+  cursor: pointer;
+  margin-left: 15px;
 }
 
 .close-alert:hover {
-  color: #ffeb3b; 
+  color: #ffeb3b;
 }
 
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
-      opacity: 0; 
+    opacity: 0;
   }
   to {
-      opacity: 1; 
+    opacity: 1;
   }
 }
 
@@ -589,8 +603,8 @@ td:nth-child(even) {
 footer {
   padding: 20px 0;
   width: 100%;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
-  position: relative; 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
   text-align: center;
 }
 footer img {
@@ -600,28 +614,26 @@ footer img {
   cursor: pointer;
 }
 
-footer img:hover{
+footer img:hover {
   transform: scale(1.5);
 }
-.social-link{
+.social-link {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 }
 
-.social-link a{
+.social-link a {
   margin: 0 1rem;
 }
 
-
 /* CSS for WAtchList */
 
-#watch-list{
+#watch-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Centers the cards and adds space */
   margin: 20px;
-
 }
 .stock-card {
   border: 1px solid #ccc;
@@ -668,7 +680,7 @@ footer img:hover{
 .view-link,
 .delete-link {
   text-decoration: none;
-  color: #007BFF;
+  color: #007bff;
   margin-right: 10px;
 }
 
@@ -679,21 +691,10 @@ footer img:hover{
 
 /* End of CSS for WatchLit */
 
-
-
-
-
-
-
-
-
-
-
-
 /* utility classes */
 
 @media screen and (max-width: 1770px) {
-  header{
+  header {
     padding: 22px 4%;
   }
 
@@ -705,30 +706,29 @@ footer img:hover{
 
 @media (max-width: 600px) {
   h1 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .responsive-table thead {
-      display: none; /* Hide the header */
+    display: none; /* Hide the header */
   }
 
   .responsive-table tr {
-      display: block;
-      margin-bottom: 15px; 
+    display: block;
+    margin-bottom: 15px;
   }
 
   .responsive-table td {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      /* border: ; Remove borders */
-      border-bottom: 1px solid #ddd; 
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    /* border: ; Remove borders */
+    border-bottom: 1px solid #ddd;
   }
 
   .responsive-table td:before {
-      content: attr(data-label); 
-      font-weight: bold;
-      margin-right: 10px;
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 10px;
   }
-
 }
