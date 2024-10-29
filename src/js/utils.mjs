@@ -95,3 +95,4 @@ export function alertMessage(message, scroll=true) {
     window.scrollTo(0, 0);
   }
 }
+
