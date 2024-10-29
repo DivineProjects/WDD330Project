@@ -5,7 +5,7 @@ loadHeaderFooter();
 
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const symbol = urlParams.get('symbol');
+    const symbol = urlParams.get("symbol");
     const stock = new FetchData(symbol);
     stock.init();
 });
