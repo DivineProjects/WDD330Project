@@ -3,25 +3,50 @@ import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 /**
  * Update the watchList icon with the current number of items in the watchList.
  */
+// function cartItemTemplate(item) {
+//     const newItem = `
+//     <li class="cart-card divider">
+//         <a href="#" class="cart-card__image">
+//             <img src="${item.image}" alt="${item.symbol}"/>
+//         </a>
+//         <a href="#">
+//             <h2 class="card__name">${item.symbol}</h2>
+//         </a>
+//         <p class="cart-card__color">${item.changes}</p>
+//         <p class="cart-card__last-div">${item.lastDiv}</p>
+//         <p class="cart-card__price">$${item.price.toFixed(2)}</p>
+//         <a href="details.html?symbol=${item.symbol}" class="card-link">View Profile
+//             </a>
+//         <span class="cart-card__remove-data" id="${item.symbol}">Remove</span>
+//     </li>`;
+  
+//     return newItem;
+// }
+
 function cartItemTemplate(item) {
     const newItem = `
-    <li class="cart-card divider">
-        <a href="#" class="cart-card__image">
-            <img src="${item.image}" alt="${item.symbol}"/>
-        </a>
-        <a href="#">
-            <h2 class="card__name">${item.symbol}</h2>
-        </a>
-        <p class="cart-card__color">${item.changes}</p>
-        <p class="cart-card__last-div">${item.lastDiv}</p>
-        <p class="cart-card__price">$${item.price.toFixed(2)}</p>
-        <span class="cart-card__remove-data" id="${item.symbol}">X</span>
-    </li>`;
-  
-    return newItem;
+<li class="cart-card divider">
+        <div class="cart-card__image">
+            <a href="#">
+                <img src="${item.image}" alt="${item.symbol}"/>
+            </a>
+        </div>
+        <div class="cart-card__details">
+            <a href="#">
+                <h2 class="card__name">${item.symbol}</h2>
+            </a>
+            <p class="cart-card__color">Change: ${item.changes}</p>
+            <p class="cart-card__last-div">Last Divident: ${item.lastDiv}</p>
+        </div>
+        <div class="cart-card__actions">
+            <p class="cart-card__price">Price: $${item.price}</p>
+            <a href="details.html?symbol=${item.symbol}" class="card-link">View Profile</a>
+            <span class="cart-card__remove-data" id="AAPL.NE">Remove</span>
+        </div>
+    </li>`
+      return newItem;
 }
 
-  
   export function removeItemListener() {
     const cartContainer = document.querySelector("#cart-list");
     
@@ -49,8 +74,8 @@ function cartItemTemplate(item) {
 
 
 export function updateWatchListIcon(watchList) {
-    const itemCountElement = document.querySelector('.item-count'); // Select the count element
-    console.log(itemCountElement)
+    const itemCountElement = document.querySelector('#cart-item-count'); // Select the count element
+    // console.log(itemCountElement)
     const itemCount = watchList.length; // Get the number of items in the watchList
 
     // Update the watchList item count display
@@ -91,3 +116,5 @@ function displayResults() {
         resultsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
     });
 }
+
+

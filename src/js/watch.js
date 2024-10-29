@@ -1,5 +1,5 @@
-import {  loadHeaderFooter} from "./utils.mjs";
-import {displayCartItems, removeItemListener} from "./watchList.mjs";
+import {  loadHeaderFooter, getLocalStorage} from "./utils.mjs";
+import {displayCartItems, removeItemListener, updateWatchListIcon} from "./watchList.mjs";
 
 loadHeaderFooter();
 // Call this function to display the cart items when the page loads

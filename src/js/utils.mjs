@@ -22,69 +22,52 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
-// search the URL for the "key" (product) parameter, return the "value" (Prod_ID)
-export function getParam(param) {
-  const queryString = window.location.search;           // produces the URL string after "?"
-  const urlParams = new URLSearchParams(queryString);   // parse the string parameters
-  const product = urlParams.get(param)                  // looks for "value" associated to the provided "key"
-  // returns the value (if any)
-  if (product) {
-    return product;
-  } else {
-    console.log(param, "is not a valid parameter");
-    return null;
-  }
+//get URL parameter e.g <a href="product_pages/index.html?product=880RR" 
+export function getParam(param){
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get(param);
+  return product;
+
 }
 
-export function renderListWithTemplate(templateFN, parentElement, list, position = "afterbegin", clear = false) {
-  const htmlStrings = list.map(templateFN);
-  if (clear) {
-    parentElement.innerHTML = "";
-  }
-  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
-}
+// export function renderListWithTemplate(templateFn, parentElement, list, position= "afterbegin", clear = false){
+//   const htmlStrings = list.map(templateFn);
+//   if (clear){
+//     parentElement.innerHTML = "";
+//   }
+//   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+// }
 
-export function renderWithTemplate(template, parent, data={}, callback) {
-  parent.insertAdjacentHTML("afterbegin", template);
- 
-  // Update cart icon if data is provided
-  if (data.countCart !== undefined) {
-    const cartCountElement = document.querySelector('#cart-item-count');
-    cartCountElement.textContent = data.countCart > 0 ? data.countCart : '';
-    cartCountElement.style.display = data.countCart > 0 ? 'inline' : 'none';
-  }
-
-  if (callback) {
+export function renderWithTemplate(templateFn, parent, data, position ="afterbegin", callback){
+  parent.insertAdjacentHTML(position, templateFn);
+  if(callback){
     callback(data);
   }
 }
 
-export async function loadTemplate(url) {
-  const html = await fetch(url);
+// function to take an optional object and a template and insert the objects as HTML into the DOM
+export async function loadTemplate(path){
+  const html = await fetch(path);
   const htmlText = await html.text();
-  // const template = document.createElement("template");
-  // template.innerHTML = htmlText;
   return htmlText;
 }
 
+// function to dynamically load the header and footer into a page
 export async function loadHeaderFooter() {
-  const headerTemp = await loadTemplate("../partials/header.html");
-  const footerTemp = await loadTemplate("../partials/footer.html");
-  const docHeader = document.getElementById("main-header");
-  const docFooter = document.getElementById("main-footer");
+  // Load the header and footer templates in from our partials (loadTemplate).
+  const headerTemplate = await loadTemplate("../public/partials/headerStock.html");
+  const footerTemplate = await loadTemplate("../partials/footerStock.html");
 
-  const storageItems= getLocalStorage("so-cart");
+  // Grab the header and footer elements out of the DOM.
+  const headerElement = document.querySelector("#main-header");
+  const footerElement = document.querySelector("#main-footer");
 
-  // render header.html
-  if (storageItems) {
-    const countCart = storageItems.length; // count number of items in carts
-    renderWithTemplate(headerTemp, docHeader,{ countCart });
-  } else {
-    renderWithTemplate(headerTemp, docHeader);
-  }
-  // render footer.html
-  renderWithTemplate(footerTemp, docFooter);
+  // Render the header and footer (renderWithTemplate).
+  renderWithTemplate(headerTemplate, headerElement);
+  renderWithTemplate(footerTemplate, footerElement);
 }
+
 
 // handling the unhappy path (form validation)
 export function alertMessage(message, scroll=true) {

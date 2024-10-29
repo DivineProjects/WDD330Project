@@ -1,9 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
-import Alert from "./alert.js";
+import {searchApi} from "./stockSearch.mjs";
 
 loadHeaderFooter();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const alertInstance = new Alert();
-  alertInstance.loadAlerts();
-});
+searchApi();
