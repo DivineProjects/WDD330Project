@@ -2,7 +2,7 @@
 
 ## Description
 
-Use this as a starting point to complete the WDD 330 team activity: the SleepOutside web application. It scaffolds out a simple web app with Vite support to bundle up our assets.
+ WDD 330 Individual Project activity: 
 
 ## Prerequisites
 
@@ -18,3 +18,6 @@ Use this as a starting point to complete the WDD 330 team activity: the SleepOut
 - `npm run build` to build final files when you are ready to turn in.
 - `npm run lint` to run ESLint against your code to find errors.
 - `npm run format` to run Prettier to automatically format your code.
+
+
+## Website
