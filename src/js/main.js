@@ -1,5 +1,8 @@
 import { loadHeaderFooter } from "./utils.mjs";
-import {searchApi} from "./stockSearch.mjs";
+import {searchApi} from "./stockSearchData.mjs";
 
 loadHeaderFooter();
-searchApi();
+
+document.addEventListener("DOMContentLoaded", () => {
+    searchApi();
+});

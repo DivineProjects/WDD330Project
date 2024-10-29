@@ -20,7 +20,6 @@ export function searchApi() {
 }
 
 function displayResults(results) {
-    console.log(results);
     const resultsContainer = document.querySelector('.search-results');
     resultsContainer.innerHTML = ''; // Clear previous results
 
@@ -28,13 +27,13 @@ function displayResults(results) {
         resultsContainer.innerHTML = '<p>No results found.</p>';
         return;
     }
-
+            
     results.forEach(item => {
         const card = document.createElement('div');
         card.className = 'result-card';
 
         card.innerHTML = `
-            <a href="details.html?symbol=${item.symbol}" class="card-link">
+            <a href="./details.html?symbol=${item.symbol}" class="card-link">
                 <h3>${item.name} (${item.symbol})</h3>
                 <p>${item.name} is listed on the ${item.stockExchange} (${item.exchangeShortName}). The exchange trades in ${item.currency}</p>
             </a>
