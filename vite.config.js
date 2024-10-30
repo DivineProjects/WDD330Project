@@ -13,7 +13,6 @@ export default defineConfig({
         stock: resolve(__dirname, "src/stock/index.html"),
         details: resolve(__dirname, "src/stock/details.html"),
         analysis: resolve(__dirname, "src/stock/analysis.html"),
-
       },
     },
   },

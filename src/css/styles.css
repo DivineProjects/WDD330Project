@@ -440,14 +440,15 @@ h2 {
   justify-content: space-between; /* Space out the spans evenly */
   margin: 15px 0; /* Add vertical spacing between paragraphs */
 }
-
 .summary span {
   padding: 0 10px; /* Add horizontal padding to the span elements */
   border: 1px solid transparent; /* Optional: for visual spacing */
   display: inline-block; /* Ensure padding applies properly */
   text-align: left;
 }
-
+.summary a{
+  color: blue;
+}
 h4 {
   font-size: 22px;
   /* color: #444; */
@@ -689,29 +690,29 @@ footer img:hover {
   text-decoration: underline;
 }
 
-
 /* End of CSS for WatchLit */
 
 /* CSS for back button */
 .back-link {
   color: white;
-  text-decoration: none; 
-  font-weight: 300; 
+  text-decoration: none;
+  font-weight: 300;
   font-size: var(--font-size-small);
   padding: 5px 10px;
   /* border-bottom: 1px solid transparent;  */
-  transition: border-bottom 0.3s ease, color 0.3s ease; 
+  transition:
+    border-bottom 0.3s ease,
+    color 0.3s ease;
 }
 
 .back-link:hover {
-  color: whitesmoke; 
-  border-bottom: 1px solid white; 
+  color: var(--accent-one);
+  /* border-bottom: 1px solid white; */
 }
 
 .back-link:focus {
-  outline: none; 
+  outline: none;
 }
-
 
 /* utility classes */
 
