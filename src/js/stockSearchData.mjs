@@ -1,5 +1,4 @@
-
-import {fetchStock} from "./externalServices.mjs";
+import {fetchStock} from "./outServices.mjs";
 
 export function searchApi() {
     document.getElementById('search-button').addEventListener('click', async () => {
