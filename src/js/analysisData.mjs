@@ -1,4 +1,4 @@
-import {fetchStock} from "./externalServices.mjs";
+import {fetchStock} from "./outServices.mjs";
 
 export default class FetchData {
     constructor(symbol) {
