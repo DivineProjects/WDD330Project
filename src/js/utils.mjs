@@ -66,6 +66,7 @@ export async function loadHeaderFooter() {
   // Render the header and footer (renderWithTemplate).
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
+  updateWatchListCount();
 }
 
 
@@ -94,5 +95,24 @@ export function alertMessage(message, scroll=true) {
   if (scroll) {
     window.scrollTo(0, 0);
   }
+}
+
+
+// Function to update the cart item count
+export function updateWatchListCount() {
+  const items = getLocalStorage("watch-list");
+  const itemCount = items.length;
+  const countElement = document.querySelector(".item-count");
+  if (itemCount > 0) {
+    countElement.style.display = "flex"; // Show the count bubble
+    countElement.textContent = itemCount; // Set the count text
+    
+} else {
+    countElement.textContent = ""; // Clear count if watchList is empty
+    countElement.style.display = "none"; // Hide the count bubble
+
+}
+  // Update the text content
+  countElement.textContent = itemCount > 0 ? itemCount : ''; // Show count or hide if zero
 }
 

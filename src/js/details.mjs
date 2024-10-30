@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage, alertMessage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, alertMessage, updateWatchListCount } from "./utils.mjs";
 import {fetchStock} from "./outServices.mjs";
 
 function companyProfileTemplate(data) {
@@ -70,10 +70,10 @@ export class FetchData {
             cart.push(this.stock);
             // update local storage with complete watchlist
             setLocalStorage("watch-list", cart);
-            // updateWatchListIcon(cart);
-            cartAnimate();
             // put an alert message when the product is added to the watchlist
             alertMessage(`${this.stock.symbol} has been added to Watch List`, true); 
+            updateWatchListCount();
+            cartAnimate();
         }
 
     }

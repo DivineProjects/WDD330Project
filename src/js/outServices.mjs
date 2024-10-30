@@ -50,32 +50,3 @@ export class FetchData {
         }
     }
 }
-
-// export default class ExternalServices {
-//     constructor(symbol) {
-//     }
-//     async getData(category) {
-//       const data = await convertToJson(response);
-//       if (symbol) {
-//         const apiKey = import.meta.env.VITE_API_KEY; // Accessing the API key
-
-//         fetch(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${apiKey}`)
-//             .then(response => {
-//                 if (!response.ok) {
-//                     throw new Error('Network response was not ok');
-//                 }
-//                 return response.json();
-//             })
-//             .then(data => {
-//                 displayCompanyProfile(data);
-//             })
-//             .catch(error => {
-//                 document.querySelector('.company-profile').innerHTML = '<p>Error loading company profile. Please try again later.</p>';
-//             });
-//     } else {
-//         document.querySelector('.company-profile').innerHTML = '<p>No symbol provided.</p>';
-//     }
-//       return data;
-//     }
-  
-//   }

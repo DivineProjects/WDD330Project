@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage, alertMessage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, alertMessage, updateWatchListCount } from "./utils.mjs";
 
 function cartItemTemplate(item) {
     const newItem = `<div class="stock-card">
@@ -40,28 +40,10 @@ function cartItemTemplate(item) {
     // re-render the cart
     displayWatchList();
     alertMessage(`Stock Removed added to Watch List`, true); 
-
+    updateWatchListCount();
     // displayResults(cartItems)
     
   }
-
-
-export function updateWatchListIcon(watchList) {
-    const itemCountElement = document.querySelector('#cart-item-count'); // Select the count element
-    // console.log(itemCountElement)
-    const itemCount = watchList.length; // Get the number of items in the watchList
-
-    // Update the watchList item count display
-    if (itemCount > 0) {
-        itemCountElement.style.display = "flex"; // Show the count bubble
-        itemCountElement.textContent = itemCount; // Set the count text
-        
-    } else {
-        itemCountElement.textContent = ""; // Clear count if watchList is empty
-        itemCountElement.style.display = "none"; // Hide the count bubble
-
-    }
-}
 
 
 // Function to display watchlist

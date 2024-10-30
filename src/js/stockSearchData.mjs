@@ -9,13 +9,14 @@ export function searchApi() {
                 const data = await fetchStock(query,"search");
                 displayResults(data);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                // console.error('Error fetching data:', error);
                 alert('Error fetching data. Please try again later.');
             }
         } else {
             alert('Please enter a stock symbol to search.');
         }
     });
+
 }
 
 function displayResults(results) {

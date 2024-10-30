@@ -184,16 +184,33 @@ header {
 
 /* Cart icon styles */
 .cart {
+  display: flex;
   padding-top: 1em;
   position: relative;
   text-align: center;
+  align-items: center;
 }
-
+.cart{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+}
 .cart svg {
   width: 25px;
+  height: 25px;
+  margin-right: 8px;
   transition: transform 0.3s ease;
 }
-
+.item-count{
+  font-size: 12px;
+  position: absolute;
+  top: 5px; 
+  right: -6px; 
+  border-radius: 50%; 
+  padding: 2px 4px; 
+  border: 1px solid var(--accent-one); 
+}
 .cart:hover svg {
   fill: gray;
 }
@@ -220,7 +237,7 @@ header {
 .cart a.active svg {
   animation: shake 0.8s;
   /* fill: #FF6347; Change to a highlight color */
-  /* transform: scale(1.2); */
+  transform: scale(1.2);
 }
 
 /* End cart icon styles */
