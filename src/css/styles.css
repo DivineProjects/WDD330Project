@@ -689,7 +689,29 @@ footer img:hover {
   text-decoration: underline;
 }
 
+
 /* End of CSS for WatchLit */
+
+/* CSS for back button */
+.back-link {
+  color: white;
+  text-decoration: none; 
+  font-weight: 300; 
+  font-size: var(--font-size-small);
+  padding: 5px 10px;
+  /* border-bottom: 1px solid transparent;  */
+  transition: border-bottom 0.3s ease, color 0.3s ease; 
+}
+
+.back-link:hover {
+  color: whitesmoke; 
+  border-bottom: 1px solid white; 
+}
+
+.back-link:focus {
+  outline: none; 
+}
+
 
 /* utility classes */
 
