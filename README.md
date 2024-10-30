@@ -1,4 +1,4 @@
-# sleepoutside
+#  WDD 330 Individual Project activity: 
 
 ## Description
 
