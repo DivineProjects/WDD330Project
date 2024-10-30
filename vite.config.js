@@ -11,6 +11,9 @@ export default defineConfig({
         main: resolve(__dirname, "src/index.html"),
         watch: resolve(__dirname, "src/watch/watchList.html"),
         stock: resolve(__dirname, "src/stock/index.html"),
+        details: resolve(__dirname, "src/stock/details.html"),
+        analysis: resolve(__dirname, "src/stock/analysis.html"),
+
       },
     },
   },
