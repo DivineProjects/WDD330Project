@@ -190,7 +190,7 @@ header {
   text-align: center;
   align-items: center;
 }
-.cart{
+.cart {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -202,14 +202,14 @@ header {
   margin-right: 8px;
   transition: transform 0.3s ease;
 }
-.item-count{
+.item-count {
   font-size: 12px;
   position: absolute;
-  top: 5px; 
-  right: -6px; 
-  border-radius: 50%; 
-  padding: 2px 4px; 
-  border: 1px solid var(--accent-one); 
+  top: 5px;
+  right: -6px;
+  border-radius: 50%;
+  padding: 2px 4px;
+  border: 1px solid var(--accent-one);
 }
 .cart:hover svg {
   fill: gray;
@@ -463,7 +463,7 @@ h2 {
   display: inline-block; /* Ensure padding applies properly */
   text-align: left;
 }
-.summary a{
+.summary a {
   color: blue;
 }
 h4 {
