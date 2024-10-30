@@ -699,6 +699,7 @@ footer img:hover {
   font-weight: 300;
   font-size: var(--font-size-small);
   padding: 5px 10px;
+  margin: 10px;
   /* border-bottom: 1px solid transparent;  */
   transition:
     border-bottom 0.3s ease,
