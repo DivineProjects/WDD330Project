@@ -4,7 +4,7 @@ export async function fetchStock(symbol, queryType) {
     let https;
     if (queryType === "search") {
         https = `https://financialmodelingprep.com/api/v3/search?query=${symbol}&apikey=${apiKey}`;
-    } else if (queryType === "key-metrics") {
+    } else if (queryType == "key-metrics") {
         https = `https://financialmodelingprep.com/api/v3/key-metrics/${symbol}?apikey=${apiKey}`;
     } else {
         https = `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${apiKey}`;
